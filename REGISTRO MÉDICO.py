@@ -163,4 +163,54 @@ menuAyuda.add_command(label="Acerca de", command=lambda: messagebox.showinfo("Ac
 ##SOLUCIONAOOO!!!!!
 
 ventanaPrincipal.mainloop()
-aaaaaaaaaaaaaa
+
+
+###LISTA
+ventana=tk.Tk()
+ventana.title("EJEMPLO LISBOX")
+sintomasLabel=tk.Label(ventana, text="sintomas")
+sintomasLabel.grid(row=0, column=0, padx=5, pady=5, sticky= "w")
+#crear listBox
+lista=tk.Listbox(ventana, selectmode=tk.SINGLE)
+lista.insert(1, "Dolor de cabeza")
+lista.insert(2, "fiebre")
+lista.insert(3, "tos")
+lista.insert(4, "fatiga")
+lista.insert(5, "dificultad al respirar")
+lista.grid(row=0, column=1, pady=10, sticky= "we")
+
+#boton para mostrar la seleccion
+def mostrar():
+    seleccionado=lista.get(lista.curselection())
+    tk.messagebox.showinfo("Seleccion", f"Has elegido: {seleccionado}")
+boton=tk.Button(ventana, text="Mostrar seleccion", command=mostrar)
+boton.grid(row=1, column=0, pady=10, pady=10)
+
+ventana.mainloop()
+
+###COMBO
+#CREAR VENTANA PRINCIPAL
+ventana=tk.Tk
+ventana.title("Ejemplo Combobox")
+ventana.geometry("300x200")
+
+#Etiqueta
+etiqueta=tk.Label(ventana, text="Seleccione especialidad: ")
+etiqueta.grid(row=0, column=0, padx=10, pady=10, sticky= "w")
+
+#crear combobox
+opciones=["Cardiilogia", "Neurologia", "Pediatria", "Dermatologia"]
+combo=ttk.combobox(ventana, values=opciones, state="readonly")
+combo.current(0) #seleccionar primera opcion por defecto
+combo.grid(row=0, column= 1, padx=10, pady=10)
+
+#FUNCION PARA MOSTRAR LA SELECCION
+def mostrar():
+    seleccion=combo.get()
+    tk.messagebox.showinfo("Sleccion", f"Has elegido{seleccion}")
+#boton para confirmar seleccion
+boton=tk.Button(ventana, text="Aceptar", command=mostrar)
+boton.grid(row=1, column=0, columnspan=2,pady=15)
+
+
+ventana.mainloop()
