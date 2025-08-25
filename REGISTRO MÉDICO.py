@@ -160,10 +160,9 @@ menuAyuda.add_command(label="Acerca de", command=lambda: messagebox.showinfo("Ac
 
 
 
-##SOLUCIONAOOO!!!!!
-
 ventanaPrincipal.mainloop()
 
+#######CODIGOS DE LA CLASE DE HOY 25/08/2025#########
 
 ###LISTA
 ventana=tk.Tk()
