@@ -163,4 +163,4 @@ menuAyuda.add_command(label="Acerca de", command=lambda: messagebox.showinfo("Ac
 ##SOLUCIONAOOO!!!!!
 
 ventanaPrincipal.mainloop()
-
+aaaaaaaaaaaaaa
