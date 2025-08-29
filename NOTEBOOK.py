@@ -62,7 +62,12 @@ labelGrupoSanguineo=tk.Label(frame_pacientes, text="Grupo Sanguíneo: ")
 labelGrupoSanguineo.grid(row=4, column=0, sticky="w", pady=5, padx=5)
 entryGrupoSanguineo=tk.Entry(frame_pacientes)
 
-
-
+##TIPO DE SEGURO
+labelTipoSeguro=tk.Label(frame_pacientes, text="Tipo de Seguro: ")
+labelTipoSeguro.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+tipo_seguro=tk.StringVar()
+tipo_seguro.set("Público") #valor por defecto
+comboTipoSeguro=ttk.Combobox(frame_pacientes, values=["Público", "Privado", "Ninguno"], textvariable=tipo_seguro)
+comboTipoSeguro.grid(row=5, column=1, sticky="w", padx=5, pady=5)
 
 ventana_principal.mainloop()
