@@ -55,6 +55,14 @@ genero.set("Masculino") #valor por defecto
 radioMasculino=tk.Radiobutton(frame_pacientes, text="Masculino", variable=genero, value="Masculino")
 radioMasculino.grid(row=3, column=1, sticky="w", padx=5, pady=5)
 radioFemenino=ttk.Radiobutton(frame_pacientes, text="Femenino", variable=genero, value="Femenino")
-radioFemenino.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+radioFemenino.grid(row=4, column=1, sticky="w", padx=5)
+
+#grupo sanguineo
+labelGrupoSanguineo=tk.Label(frame_pacientes, text="Grupo Sanguíneo: ")
+labelGrupoSanguineo.grid(row=4, column=0, sticky="w", pady=5, padx=5)
+entryGrupoSanguineo=tk.Entry(frame_pacientes)
+entryGrupoSanguineo.grid(row=4, column=1, sticky="w", pady=5, padx=5)
+
+
 
 ventana_principal.mainloop()
