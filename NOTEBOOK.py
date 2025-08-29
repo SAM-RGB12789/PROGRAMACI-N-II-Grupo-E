@@ -70,4 +70,12 @@ tipo_seguro.set("Público") #valor por defecto
 comboTipoSeguro=ttk.Combobox(frame_pacientes, values=["Público", "Privado", "Ninguno"], textvariable=tipo_seguro)
 comboTipoSeguro.grid(row=5, column=1, sticky="w", padx=5, pady=5)
 
+#CENTRO MÉDICO
+labelCentroMedico=tk.Label(frame_pacientes, text="Centro Médico: ")
+labelCentroMedico.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+centro_medico=tk.StringVar()
+centro_medico.set("Hospital General") #valor por defecto
+comboCentroMedico=ttk.Combobox(frame_pacientes, values=["Hospital General", "Clínica  Norte", "Centro Sur"], textvariable=centro_medico)
+comboCentroMedico.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+
 ventana_principal.mainloop()
