@@ -5,7 +5,7 @@ from tkinter import messagebox
 #crear ventana principal
 ventana_principal=tk.Tk()
 ventana_principal.title("Libro de Pacientes y Doctores")
-ventana_principal.geometry("400x600")
+ventana_principal.geometry("800x600")
  
 #crear contenedor de NOTEBOOK (pestañas)
 pestanas=ttk.Notebook(ventana_principal)
