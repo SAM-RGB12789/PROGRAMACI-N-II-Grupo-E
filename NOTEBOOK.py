@@ -77,4 +77,21 @@ centro_medico=tk.StringVar()
 centro_medico.set("Hospital General") #valor por defecto
 comboCentroMedico=ttk.Combobox(frame_pacientes, values=["Hospital General", "Clínica  Norte", "Centro Sur"], textvariable=centro_medico)
 comboCentroMedico.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+
+#framear botones
+btn_frame=tk.Frame(frame_pacientes)
+btn_frame.grid(row=8, column=0, columnspan=2, pady=5, padx=5, sticky="w")
+
+#boton registrar   
+btn_registrar=tk.Button(btn_frame, text="Registrar", command="")
+btn_registrar.grid(row=0, column=0, padx=5)
+
+#boton eliminar
+btn_eliminar=tk.Button(btn_frame, text="Eliminar", command="")
+btn_eliminar.grid(row=0, column=1, padx=5) 
+
+
+
+
+
 ventana_principal.mainloop()
