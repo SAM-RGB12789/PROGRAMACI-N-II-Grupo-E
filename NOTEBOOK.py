@@ -90,8 +90,18 @@ btn_registrar.grid(row=0, column=0, padx=5)
 btn_eliminar=tk.Button(btn_frame, text="Eliminar", command="")
 btn_eliminar.grid(row=0, column=1, padx=5) 
 
+#crar Treeview para mostrar pacientes
+treeview = ttk.Treeview(frame_pacientes, columns=("Nombre", "FechaN", "Edad", "Género", "GrupoS", "TipoS", "CentroM"), show="headings"
+)
 
-
+#Definir encabezados
+treeview.heading("Nombre", text="Nombre Completo")
+treeview.heading("FechaN", text="Fecha de Nacimiento")
+treeview.heading("Edad", text="Edad")
+treeview.heading("Género", text="Género")
+treeview.heading("GrupoS", text="Grupo Sanguíneo")
+treeview.heading("TipoS", text="Tipo de Seguro")
+treeview.heading("CentroM", text="Centro Médico")
 
 
 ventana_principal.mainloop()
