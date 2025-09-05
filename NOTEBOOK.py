@@ -130,7 +130,7 @@ fechaN.grid(row=1, column=1, sticky="w", padx=5, pady=5)
 labelEdad=tk.Label(frame_pacientes, text="Edad: ")
 labelEdad.grid(row=2, column=0, sticky="w", padx=5, pady=5)
 edadVar = tk.StringVar()
-edadP=tk.Entry(frame_pacientes, textvariable=edadVar, state="readonly")
+edadP=tk.Entry(frame_pacientes, textvariable=edadVar) #state="readonly"#)
 edadP.grid(row=2, column=1, sticky="w", padx=5, pady=5) 
 
 #GENERO
@@ -238,7 +238,7 @@ entry_telefonoD.grid(row=2, column=3, padx=5, pady=5, sticky="ew")
 # botones doctores
 btn_frameD = tk.Frame(frame_doctores)
 btn_frameD.grid(row=3, column=0, columnspan=4, pady=10)
-tk.Button(btn_frameD, text="Registrar", bg="green", fg="white", width=12).grid(row=0, column=0, padx=10)
+tk.Button(btn_frameD, text="Registrar", command=registrarDoctor, bg="green", fg="white", width=12).grid(row=0, column=0, padx=10)
 tk.Button(btn_frameD, text="Eliminar", bg="red", fg="white", width=12).grid(row=0, column=1, padx=10)
 
 # tabla
