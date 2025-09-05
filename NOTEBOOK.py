@@ -23,7 +23,7 @@ def enmascarar_fecha(texto):
     if len (fechaN.get())==10:
         fecha_actual=datetime.now().date()
         fecha_nacimiento=datetime.strptime(fechaN.get(), "%d-%m-%Y").date()
-        edad=fecha_actual.year - fecha_nacimiento.year
+        edad=fecha_actual.year - fecha_nacimiento.year 
     else:
         edadVar.set("")
     return True
