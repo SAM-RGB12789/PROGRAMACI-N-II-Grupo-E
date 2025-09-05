@@ -27,7 +27,7 @@ def enmascarar_fecha(texto):
     else:
         edadVar.set("")
     return True
-### PACIENTES ###
+###--------------------- PACIENTES ------------------------------###
 #lista de pacientes (inicialmente vacia)
 paciente_data=[]
 #funcion para registrar paciente
@@ -61,9 +61,20 @@ def cargar_treeview():
             item["Tipo de Seguro"],
             item["Centro Médico"]
         ))  
+###---------------- FUNCION PARA ELIMINAR PACIENTES ----------------------###
+def eliminarPaciente():
+    seleccionado = treeview.selection()
+    if seleccionado:
+        item_id = seleccionado[0]
+        indice = int(item_id)
+        if 0 <= indice < len(paciente_data):
+            del paciente_data[indice]
+            cargar_treeview()
+            messagebox.showinfo("Eliminado", "Paciente eliminado correctamente.")
+    else:
+        messagebox.showwarning("Advertencia", "Por favor, selecciona un paciente para eliminar.")        
         
-        
-##### DOCTORES ######
+#####-------------------- DOCTORES --------------------------######
 #funcion para doctores
 doctores_data = []
 
@@ -86,7 +97,20 @@ def cargar_treeview_doctores():
             item["Especialidad"],
             item["Edad"],
             item["Teléfono"]
-        ))  
+        )) 
+###----------------- FUNCION PARA ELIMINAR DOCTORES --------------### 
+def eliminarDoctor():
+    seleccionado = treeview_doctores.selection()
+    if seleccionado:
+        item_id = seleccionado[0]
+        indice = int(item_id)
+        if 0 <= indice < len(doctores_data):
+            del doctores_data[indice]
+            cargar_treeview_doctores()
+            messagebox.showinfo("Eliminado", "Doctor eliminado correctamente.")
+    else:
+        messagebox.showwarning("Advertencia", "Por favor, selecciona un doctor para eliminar.")
+        
 #crear ventana principal
 ventana_principal=tk.Tk()
 ventana_principal.title("Libro de Pacientes y Doctores")
@@ -174,7 +198,7 @@ btn_registrar=tk.Button(btn_frame, text="Registrar", command=registrarPaciente)
 btn_registrar.grid(row=0, column=0, padx=5)
  
 #boton eliminar
-btn_eliminar=tk.Button(btn_frame, text="Eliminar", command="")
+btn_eliminar=tk.Button(btn_frame, text="Eliminar", command=eliminarPaciente)
 btn_eliminar.grid(row=0, column=1, padx=5)
  
 #crar Treeview para mostrar pacientes
@@ -239,7 +263,7 @@ entry_telefonoD.grid(row=2, column=3, padx=5, pady=5, sticky="ew")
 btn_frameD = tk.Frame(frame_doctores)
 btn_frameD.grid(row=3, column=0, columnspan=4, pady=10)
 tk.Button(btn_frameD, text="Registrar", command=registrarDoctor, bg="green", fg="white", width=12).grid(row=0, column=0, padx=10)
-tk.Button(btn_frameD, text="Eliminar", bg="red", fg="white", width=12).grid(row=0, column=1, padx=10)
+tk.Button(btn_frameD, text="Eliminar",command=eliminarDoctor, bg="red", fg="white", width=12).grid(row=0, column=1, padx=10)
 
 # tabla
 treeview_doctores = ttk.Treeview(frame_doctores, columns=("Nombre", "Especialidad", "Edad", "Teléfono"), show="headings", height=7)
