@@ -276,5 +276,4 @@ for col in ("Nombre", "Especialidad", "Edad", "Teléfono"):
 for i in range(4):
     frame_doctores.grid_columnconfigure(i, weight=1)
 
-
 ventana_principal.mainloop()
