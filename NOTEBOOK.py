@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from datetime import datetime
+#EVENTO PARA CAMBIAR DE PESTAÑA#
 
 ###------ACTUALIZACION DE LA CLASE FUNCION PARA ENMASCARAR FECHA------### 
 #funcion para enmascarar fecha
@@ -107,17 +108,63 @@ def eliminarPaciente():
         return        
         
 #####-------------------- DOCTORES --------------------------######
+##LAS FUNCIONES TXT REGISTRAR Y ELIMINAR##
+def guardar_doctores_en_archivo():
+    with open("paciente.txt","w",encoding="utf=8") as archivo:
+        for doctor in paciente_data:
+            archivo.write(f"{doctor['Nombre']}|{doctor['Especialidad']}|{doctor['Edad']}|"f"{doctor['Teléfono']}\n")
+###
+def cargar_doctores_desde_archivo():
+    try:
+        with open("doctores.txt","r",encoding="utf=8") as archivo: ###"r" es para leer#
+            doctores_data.clear() #limpiar lista antes de cargar
+            for linea in archivo:
+                datos=linea.strip().split("|")
+                if len(datos)==4:
+                    doctores_data={
+                        "Nombre": datos[0],
+                        "Especialidad": datos[1],
+                        "Edad": datos[2],
+                        "Teléfono": datos[3],
+                    }
+                    doctores_data.append(doctores_data)
+        cargar_treeview()
+    except FileNotFoundError:
+        open("doctores.txt","w",encoding="utf=8").close() #crear archivo si no existe
+###
+def eliminarDoctores():
+    seleccionado2 = treeview.selection()
+    if seleccionado2:
+        indice = int(seleccionado2[0])
+        id_item = seleccionado2[0]
+        if messagebox.askyesno("Eliminar Doctor", "¿Estás seguro de que deseas eliminar a este Doctor?"): 
+            {treeview.item(id_item, 'values')[0]}
+            del doctores_data[indice]
+            guardar_en_archivo() #GUARDAR LOS CAMBIOS EN EL ARCHIVO
+            cargar_treeview()
+            messagebox.showinfo("Eliminar Doctor", "Doctor eliminado exitosamente.")
+    else: ##ESTE ELSE ES DEL IF SELECCIONADO
+        messagebox.showwarning("Eliminar Doctor", "No se ha seleccionado ningún Doctor.")
+        return  
+##LAS FUNCIONES TXT REGISTRAR Y ELIMINAR##
 #funcion para doctores
 doctores_data = []
 
 def registrarDoctor():
-    doctor = {
+    if entry_nombreD.get() and combo_especialidadD.get() and spin_edadD.get() and entry_telefonoD.get():
+        doctor = {
         "Nombre": entry_nombreD.get(),
         "Especialidad": combo_especialidadD.get(),
         "Edad": spin_edadD.get(),
         "Teléfono": entry_telefonoD.get()
     }
-    doctores_data.append(doctor)
+        doctores_data.append(doctor)
+        guardar_doctores_en_archivo()
+        cargar_treeview_doctores()
+        messagebox.showinfo("Registro exitoso", "Doctor registrado correctamente.")
+    else:
+        messagebox.showwarning("Advertencia", "Por favor, completa todos los campos.")
+    #
     cargar_treeview_doctores()
 
 def cargar_treeview_doctores():
