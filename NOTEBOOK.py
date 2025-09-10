@@ -94,14 +94,17 @@ def cargar_treeview():
 def eliminarPaciente():
     seleccionado = treeview.selection()
     if seleccionado:
-        item_id = seleccionado[0]
-        indice = int(item_id)
-        if 0 <= indice < len(paciente_data):
+        indice = int(seleccionado[0])
+        id_item = seleccionado[0]
+        if messagebox.askyesno("Eliminar Paciente", "¿Estás seguro de que deseas eliminar a este paciente?"): 
+            {treeview.item(id_item, 'values')[0]}
             del paciente_data[indice]
+            guardar_en_archivo() #GUARDAR LOS CAMBIOS EN EL ARCHIVO
             cargar_treeview()
-            messagebox.showinfo("Eliminado", "Paciente eliminado correctamente.")
-    else:
-        messagebox.showwarning("Advertencia", "Por favor, selecciona un paciente para eliminar.")        
+            messagebox.showinfo("Eliminar Paciente", "Paciente eliminado exitosamente.")
+    else: ##ESTE ELSE ES DEL IF SELECCIONADO
+        messagebox.showwarning("Eliminar Paciente", "No se ha seleccionado ningún paciente.")
+        return        
         
 #####-------------------- DOCTORES --------------------------######
 #funcion para doctores
@@ -191,7 +194,7 @@ edadP.grid(row=2, column=1, sticky="w", padx=5, pady=5)
 #GENERO
 labelGenero=tk.Label(frame_pacientes, text="Género: ")
 labelGenero.grid(row=3, column=0, sticky="w", padx=5, pady=5)
- 
+
 genero=tk.StringVar()
 genero.set("Masculino") #valor por defecto
 radioMasculino=tk.Radiobutton(frame_pacientes, text="Masculino", variable=genero, value="Masculino")
@@ -310,5 +313,12 @@ for col in ("Nombre", "Especialidad", "Edad", "Teléfono"):
 for i in range(4):
     frame_doctores.grid_columnconfigure(i, weight=1)
 cargar_desde_archivo()#cargar datos desde el archivo al iniciar la aplicacion
+
+
+
+
+
+
+
 ventana_principal.mainloop()
 ### TAREA FORMULARIO PACIENTE Y FORMULARIO DOCTOR
