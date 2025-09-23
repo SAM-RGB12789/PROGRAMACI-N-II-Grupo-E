@@ -178,7 +178,7 @@ scroll_y = ttk.Scrollbar(list_frame, orient="vertical", command=treeview.yview)
 scroll_y.grid(row=0, column=1, sticky="ns")
 treeview.configure(yscrollcommand=scroll_y.set)
 
-#Llama al `cargar_medicamentos()` para que los datos aparezcan al iniciar.
+#Llama a cargar_medicamentos
 cargar_medicamentos()
 # Ejecutar
 ventana.mainloop()
