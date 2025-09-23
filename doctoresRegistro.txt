@@ -1,0 +1,5 @@
+Luis Gomez|Cardiología|4|Masculino|Hospital central
+Adelayda Partes|Neurología|5|Femenino|Hospital Norte
+Adan Avendaño|Pediatría|4|Masculino|Clínica Santa María
+Shirley Calle|Pediatría|9|Femenino|Clínica Vida
+Carlos Calle|Traumatología|6|Masculino|Clínica Santa María
