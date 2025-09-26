@@ -1,0 +1,4 @@
+Paco Torrez|12-08-2000|25|O+|Público|Hospital General|65|Masculino
+Adelayda Partes|12-08-2000|25|O+|Público|Hospital General|70|Femenino
+Shirley Calle|05-09-1999|26|O+|Público|Hospital General|65|Femenino
+Jose Manuel|27-04-2003|22|O+|Público|Hospital General|70|Masculino

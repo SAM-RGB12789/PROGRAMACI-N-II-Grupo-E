@@ -15,7 +15,7 @@ def guardar_medicamento():
     if not all([nombre, presentacion, dosis, fecha]):
         messagebox.showwarning("Campos incompletos", "Por favor, complete todos los campos.")
         return
-
+ #
     #Se añade el nuevo registro al Treeview.
     treeview.insert("", "end", values=(nombre, presentacion, dosis, fecha))
 

@@ -1,3 +1,4 @@
-JUANCITO PINTO| 23-01-1980-|45|MASCULINO|A|PRIVADO|CAJA PETROLERA
-ADELAYDA ROSARIO PARTES| 06-10-2002-|22|FEMENINO|ORH+|PRIVADO|CAJA NACIONAL
-LUIS GOMEZ ORELLANA| 12-04-1999-|23|MASCULINO|B|PUBLICO|CLINICA JESUS
+Paco Torrez|12-08-2000|25|Masculino|O+|Público|Hospital General|65
+Adelayda Partes|12-08-2000|25|Femenino|O+|Público|Hospital General|70
+Shirley Calle|05-09-1999|26|Femenino|O+|Público|Hospital General|65
+Jose Manuel|27-04-2003|22|Masculino|O+|Público|Hospital General|70
